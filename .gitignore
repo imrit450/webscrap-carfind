@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 *.pyc
 .webscrap/spiders/__pycache__/
-
+webscrap/spiders/__pycache__/
