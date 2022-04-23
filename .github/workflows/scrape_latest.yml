@@ -39,7 +39,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Fetch latest data
         run: |-
-            scrapy crawl motorsmega_mu && scrapy crawl mycar_mu && scrapy crawl carsales_mu && scrapy crawl weshare_mu
+            scrapy crawl motorsmega_mu -L WARNING && scrapy crawl mycar_mu -L WARNING && scrapy crawl carsales_mu -L WARNING && scrapy crawl weshare_mu -L WARNING
       - name: Commit and push if it changed
         run: |-
           git config user.name "Automated"
