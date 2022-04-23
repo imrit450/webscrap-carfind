@@ -19,7 +19,7 @@ class CarsPipeline(object):
         self.curr = self.conn.cursor()
 
     def create_table(self):
-        self.curr.execute("""DELETE FROM cars_tbl WHERE lower(car_source) = 'mycar.mu'""")
+        self.curr.execute("""DELETE FROM cars_tbl""")
         # mycar.mu
         # motors.mega.mu
         # weshare.mu
