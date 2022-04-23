@@ -128,5 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 *.pyc
-webscrap/spiders/__pycache__/*
+.webscrap/spiders/__pycache__/
 
