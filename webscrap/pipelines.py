@@ -23,23 +23,25 @@ class CarsPipeline(object):
         # mycar.mu
         # motors.mega.mu
         # weshare.mu
-        # carsales_mu
+        # carsales.mu
 
-        # self.curr.execute("""CREATE TABLE cars_tbl(
-        #         car_title text,
-        #         car_make text,
-        #         car_model text,
-        #         car_price integer,
-        #         car_link text,
-        #         car_mileage integer,
-        #         car_year text,
-        #         car_transmission text,
-        #         car_status text,
-        #         car_image_link text,
-        #         car_source text,
-        #         car_posted_date text,
-        #         car_engine_capacity text
-        #         )""")
+        # self.curr.execute("""CREATE TABLE "cars_tbl" (
+        # 	"car_title"	text,
+        # 	"car_make"	text,
+        # 	"car_model"	text,
+        # 	"car_price"	integer,
+        # 	"car_link"	text,
+        # 	"car_mileage"	integer,
+        # 	"car_year"	text,
+        # 	"car_transmission"	text,
+        # 	"car_status"	text,
+        # 	"car_image_link"	text,
+        # 	"car_source"	text,
+        # 	"car_posted_date"	text,
+        # 	"car_engine_capacity"	text,
+        # 	"LastModifiedOn"	datetime DEFAULT 'SYSDATETIME()',
+        # 	PRIMARY KEY("car_link")
+        # )""")
         pass
 
     def process_item(self, item, spider):
