@@ -72,7 +72,6 @@ class MycarMuSpider(scrapy.Spider):
         car_make = car_title.split(" ", 1)[0]
         car_model = remove_dash(car_title.split(" ", 1)[1])
         car_status = response.css('.col-count li:nth-child(1) span::text').extract_first()
-        print(car_status)
         car_price = convert_to_int(response.css('#price-dutypaid .price').extract_first())
 
         is_new = response.css('.topright::text').extract_first()

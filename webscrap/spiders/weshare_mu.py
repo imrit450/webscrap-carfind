@@ -69,7 +69,6 @@ class WeShareMuItemSpider(scrapy.Spider):
                 cb_kwargs={'car': car, 'car_link': car_link, 'base_url': base_url, 'car_image_link': car_image_link},
                 dont_filter=True
             )
-        print("Page number: " + str(WeShareMuItemSpider.page_number))
 
         next_page = "https://weshare.mu/offres?category=7&ncid=12&page=" + str(WeShareMuItemSpider.page_number)
         if WeShareMuItemSpider.page_number <= 10:
@@ -84,7 +83,7 @@ class WeShareMuItemSpider(scrapy.Spider):
         car_model = title[1]
         car_year = title[2]
         car_title = str(' '.join(title))
-        print(car_title)
+
 
         key = []
         value = []
@@ -99,7 +98,7 @@ class WeShareMuItemSpider(scrapy.Spider):
 
         # Create the dictionary :
         spec_dict = dict(zip(keys, values))
-        print(spec_dict)
+
 
         if 'Kilométrage' not in spec_dict:
             car_mileage = -1

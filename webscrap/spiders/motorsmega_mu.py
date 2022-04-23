@@ -65,10 +65,8 @@ class MyMotorMegaMuSpider(scrapy.Spider):
                 cb_kwargs={'car': car, 'car_link': car_link},
                 dont_filter=True
             )
-        print("Page number: " + str(MyMotorMegaMuSpider.page_number))
         next_page_url = str(MyMotorMegaMuSpider.page_number) + "/?withPhoto=on&onlyActual=on"
         next_page = urljoin("https://motors.mega.mu/auto/search/", next_page_url)
-        print(next_page)
         if MyMotorMegaMuSpider.page_number <= 25:
             MyMotorMegaMuSpider.page_number += 1
             yield response.follow(next_page, callback=self.parse)
