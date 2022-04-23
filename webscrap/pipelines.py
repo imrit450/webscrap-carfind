@@ -6,6 +6,7 @@
 
 # useful for handling different item types with a single interface
 import sqlite3
+from datetime import datetime
 
 
 class CarsPipeline(object):
@@ -49,7 +50,7 @@ class CarsPipeline(object):
         return item
 
     def store_db(self, items):
-        self.curr.execute("""INSERT INTO cars_tbl values(?,?,?,?,?,?,?,?,?,?,?,?,?)""", (
+        self.curr.execute("""INSERT INTO cars_tbl values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)""", (
             items['car_title'],
             items['car_make'],
             items['car_model'],
@@ -62,6 +63,7 @@ class CarsPipeline(object):
             items['car_image_link'],
             items['car_source'],
             items['car_posted_date'],
-            items['car_engine_capacity']
+            items['car_engine_capacity'],
+            datetime.now()
         ))
         self.conn.commit()
