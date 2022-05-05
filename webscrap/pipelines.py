@@ -13,14 +13,14 @@ class CarsPipeline(object):
 
     def __init__(self):
         self.create_connection()
-        self.create_table()
+        self.clear_table()
 
     def create_connection(self):
         self.conn = sqlite3.connect("mycars.db")
         self.curr = self.conn.cursor()
 
-    def create_table(self):
-        self.curr.execute("""DELETE FROM cars_tbl""")
+    def clear_table(self):
+        #self.curr.execute("""DELETE FROM cars_tbl""")
         # mycar.mu
         # motors.mega.mu
         # weshare.mu
